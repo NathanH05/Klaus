@@ -41,18 +41,41 @@ body {
 	width: 100%;
 	margin: auto;
 	display: inline-block;
+
 	position: relative;
+
 }
 #form{
+
 	border-radius: 5px;
-    background-color: #f2f2f2;
+
+    background-color: #f2f2f2
+
+
+ ;
     padding: 20px;
+
+
+
+}
+
+#saleLabel{
+	display:none;
+	width:33.3%;
+}
+
+#sale{
+	display:none;
 }
 
 #recommendations{
+
 	background: #A1B3C7;
+
 	border: 1px solid black;
+
 	height:300px;
+
 }
 
 #person1{

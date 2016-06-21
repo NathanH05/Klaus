@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<script type="text/javascript" src="script.js"></script>
 <link rel="stylesheet" type="text/css" href="css/main.css"
 <meta charset="UTF-8">
 <title>padding</title>
@@ -36,9 +37,11 @@ input[type=submit]:hover {
 }
 
 </style>
+
 </head>
 <body>
-	<div id="banner">
+	
+  <div id="banner">
 		
 		<img id="homesBanImage" src="_images/StyleHome.jpg"></img>
 
@@ -47,29 +50,65 @@ input[type=submit]:hover {
 	</div>
 	<section class="Intro">
 		<h3 style="font-style:italic;">
-			Empowering Privaty Property Sales
+			Empowering Private Property Sales
 
 		</h3>
 
 		<h3>
-			Klaus is a property sales tool designed for sellers that elimanates the grunt work of selling your house without an agent.
+			Klaus is a property sales tool designed for sellers that eliminates the grunt work of selling your house without an agent.
 		</h3>
 	</section>
 
 <div id = "form">
   <form action="action_page.php">
+    
+    <!-- The Address Label and text box-->
     <label for="address">Address</label>
     <input type="text" id="address" style="padding:5px;" name="firstname" value ="Enter Your Property Address to Begin" onfocus="this.value='';" />
 
-    <label for="Suburb">Suburb</label>
+    <!--<label for="Suburb">Suburb</label>
     <select id="suburb" name="suburb">
       <option value="Remuera">Remuera</option>
       <option value="Ponsonby">Ponsonby</option>
       <option value="Mission Bay">Mission Bay</option>
       <option value="Mission Bay">Herne Bay</option>
       <option value="Mission Bay">Auckland Central</option>
-    </select>
+    </select>-->
   
+
+  <!-- The Type label and select options-->
+  <label for="type" id="type" style="float:left;width:36.3%;display:inline-block;">Type</label>
+
+  <select id="typeSelect" name="Type" >
+     <option label="" selected></option>
+      <option label="Apartment" name="gggg" value="Apartment" type="text" display="none" >Apartment</option>
+      <option label="House" value="House">House</option>
+      <option   label="Townhouse" value="Townhouse">Townhouse</option>
+  </select>
+  
+ <!-- The Sale label and options-->
+
+ <div id ="sally">
+  <label id="saleLabel" for="sale">Sale</label>
+   <!-- The Sale options-->
+  <select id="sale" name "sale">
+      <option id="Asking Price" label="Asking Price" name="Asking Price" value="Asking Price">Asking Price:</option>
+      <option id="enquiresOver" label="House" value="House">Enquiries Over:</option>
+      <option id="auctionDate" label="Townhouse" value="Townhouse">Auction Date:</option>
+  </select>
+  </div>
+
+   <!-- The Duration label so as to display in-line-->
+  <label for="duration" style="float:right;width:30.3%;display:none;" display="none">Duration</label> 
+
+   <!-- The Duration label and options-->
+   <select id="duration" name "duration" style="display:none;">
+      <option id="twentyOne" label="twentyOne" name="twentyOne" value="twentyOne" type="text" display="none" onfocus="this.value=value">21 days</option>
+      <option id="twentyEight" label="twentyEight" value="twentyEight">28 days</option>
+      <option id="fortyTwo" label="fortyTwo" value="fortyTwo">42 days</option>
+  </select>
+
+   <!-- The Submit button-->
     <input type="submit" value="Submit">
   </form>
 </div>
@@ -90,5 +129,6 @@ input[type=submit]:hover {
 <img src="_images/couple1.jpg" style="width:100%;height:60%;"></img>
 </div>
 </section>
+
 </body>
 </html> 

@@ -10,30 +10,104 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 	<script src='jquery.js'></script>
-	<script>
-	window.onload = function() {
-		if (window.jQuery){
-			alert("Yeah");
-		} else {
-			alert("Doesn't Work");
-		}
-	}
-	$(function() {
+<script type="text/javascript" src="jquery.leanModal.min.js"></script>
+	<script type="text/javascript">
+
+
+
+	$(document).ready(function(){
+	var i = 0;
+	$('.nextButton').click(function(){
+		i++;
+		var nob = $("li[class^=tab-link]");
+		var tab_id = nob[i];
+		var nobcontent = $(tab_id).attr("data-tab");
+		console.log(nobcontent);
+		console.log(i);
 		
-			)
+		
+	//	console.log(nob[0]);
+		
+		
+		
 
-		$('.tab-panels .tabs li').on('click',function() {
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
 
-			var panelToShow = $(this).attr('rel');
-			alert(panelToShow);
+		$(nob[i]).addClass('current');
+		$("#"+nobcontent).addClass('current');
+		//	console.log(tab_id);
+		if (i==4) {
+		
+		
+        var my_text = prompt('Thanks for registering your interest with Klaus. We are still in BETA mode but will get in touch soon! Please enter your email here');
+        console.log(my_text);console.log("hi");
+        alert('Thankyou someone from Klaus will get in touch soon');
+  i=0;
+  console.log(i);
+  $(nob[i]).addClass('current');
+  var tab_id = nob[i];
+  var nobcontent = $(tab_id).attr("data-tab");
+		$("#"+nobcontent).addClass('current');console.log(nobcontent);
+	};
+	
+	
+	})
+	
+
+})
+var i = 1;
+function TabTransition(){
+	
+		i++;
+		console.log(i);
+		//var nob = $("[class^=innerTab]");
+		//var tab_id = nob[i];
+		//console.log(nob)
+
+		var nob = $("li[class^=tab-link]");
+		var tab_id = nob[i];
+		var nobcontent = $(tab_id).attr("data-tab");
+		var nobcontent = $(tab_id).attr("data-tab");
+		
+		
+		
+	//	console.log(nob[0]);
+		
+		
+		
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(nob[i]).addClass('current');
+		$("#"+nobcontent).addClass('current');console.log(nobcontent);
+		
+		if (i==4) {
+		
+		
+        var my_text = prompt('Thanks for registering your interest with Klaus. We are still in BETA mode but will get in touch soon! Please enter your email here');
+        console.log(my_text);console.log("hi");
+        alert('Thankyou someone from Klaus will get in touch soon');
+  i=0;
+  console.log(i);
+  $(nob[i]).addClass('current');
+  var tab_id = nob[i];
+  var nobcontent = $(tab_id).attr("data-tab");
+		$("#"+nobcontent).addClass('current');console.log(nobcontent);
+		
+	};
+	}
+	
 
 
 
-		});
-		});
-	} 
 
 </script>
+
+
+
+
 	<meta charset="utf-8" />
 
 	<title>Klaus | Your Home Sell Companion</title>
@@ -67,9 +141,58 @@
 	<!--<script type="text/javascript" src="js/jquery.animation.easing.js"></script>-->
 	<!--<script type="text/javascript" src="/js/jquery.wiggle.js"></script>-->
 	
-	
+	 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 	<style>
-input[type=text], select {
+  .box{
+  color: 'black';
+  padding: 10px;
+}
+ 
+.box:hover{
+  background: #fff;
+  color: 'black';
+}
+ 
+.demo-1 {
+  position: relative;
+}
+ 
+.demo-1:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+ 
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.2s;
+ 
+  -webkit-transition-property: top, left, right, bottom;
+  -moz-transition-property: top, left, right, bottom;
+  -ms-transition-property: top, left, right, bottom;
+  -o-transition-property: top, left, right, bottom;
+  transition-property: top, left, right, bottom;
+}
+ 
+.demo-1:hover:before, .demo-1:focus:before{
+  -webkit-transition-delay: .1s;
+  -moz-transition-delay: .1s;
+  -ms-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  transition-delay: .1s; 
+ 
+  border: #fff solid 3px;
+  bottom: -7px;
+  left: -7px;
+  top: -7px;
+  right: -7px;
+}
+
+   input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -95,7 +218,8 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-</style>
+    </style>
+ 
 
 </head>
 <body>
@@ -204,473 +328,188 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 
 	</div>
 
-	<!-- Folio Projects -->
+
+
+<div class="container">
+
+	<ul class="tabs" >
+		<li class="tab-link current" data-tab="tab-1" >Address</li>
+		<li class="tab-link" data-tab="tab-2">House Type</li>
+		<li class="tab-link" data-tab="tab-3">Sale Type</li>
+		<li class="tab-link" data-tab="tab-4">Sale Duration</li>
+	</ul>
+
+	<div id="tab-1" class="tab-content current">
+		
+
+	 <div id="locationField">
+      <input id="autocomplete" class ="autocomplete" placeholder="Enter your address"
+             onFocus="geolocate()" type="text"></input><br/><br/><br/><br/>
+	
+    </div>
+    <button class="nextButton" style="font-size="50px"">Next</button>
+	</div>
+	<div id="tab-2" class="tab-content".>
+	<div id="innerTabHseType" class="innerTab" onClick="TabTransition();">
+		
+	
+	<nav>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>House<br/></span> </a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>Townhouse<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>Unit<br/></span></a>
+      <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Section</br></span></a>
+       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Lifestyle Dwelling</br></span></a>
+</nav>
+	</div>
 	
 
-<!-- MOBILE Folio Projects -->
-<!--<div id="mobielFolio">
+	</div>
+	<div id="tab-3" class="tab-content">
+		<div id="innerTabSleType" class="innerTab" onClick="TabTransition();">
+	
+	<nav>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>Auction<br/></span> </a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>Tender<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>Price By Negotiation<br/></span></a>
+      <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Enquiries Over</br></span></a>
+       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Tender Closing</br></span></a>
+       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Deadline Sale</br></span></a>
+</nav>
+</br>
+</div>
 
-	<div class="container">
-		<h3><span class="marker"></span>Folio</h3>
-
-		<div class="section_heading">
-			<div class="inner">
-				<h1>A multi-award winning service design, customer & user experience agency. <br />
-Creating ideas and products to transform and grow your business.</h1>
-			</div>
-		</div>
 	</div>
 
-
-	<div class="iosSlider mobileFolio">
-		<ul class="slider">
-
-			
-			
-			<li class="slide project" data-id="lvmh-domain-chandon-responsive-digital-website-user-experience">
-
-				<div class="caption">
-					<h3>LVMH Domain Chandon Responsive Digital Website User Experience</h3>
-										<a class="add-hash" href="/projects/lvmh-domain-chandon-responsive-digital-website-user-experience/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-domain-chandon-champagne-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="beautiful-level-aa-wcag-accessible-responsive-website-for-wagpet">
-
-				<div class="caption">
-					<h3>A beautiful digital platform for WAGPET</h3>
-					<p>Ensuring digital success.</p>					<a class="add-hash" href="/projects/beautiful-level-aa-wcag-accessible-responsive-website-for-wagpet/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-wagpet-hover.gif'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="heart-foundation-of-australia-strategy-customer-and-digital-experience">
-
-				<div class="caption">
-					<h3>Heart Foundation of Australia Strategy, Customer and Digital Experience</h3>
-					<p>Saving lives and improving health through world-class cardiovascular research.</p>					<a class="add-hash" href="/projects/heart-foundation-of-australia-strategy-customer-and-digital-experience/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/heart-foundation-sd-cx-ux-hover.gif'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="culture-victoria-150-years-of-historical-content">
-
-				<div class="caption">
-					<h3>Culture Victoria 150 years of historical content</h3>
-					<p>Responsive website making 150 years of Victorian historical content freely accessible – to anyone in the world.</p>					<a class="add-hash" href="/projects/culture-victoria-150-years-of-historical-content/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumbnail-portrait-culture-victoria-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="creative-new-website-for-aussie-start-up-envato">
-
-				<div class="caption">
-					<h3>Creative new website for Aussie start up Envato</h3>
-										<a class="add-hash" href="/projects/creative-new-website-for-aussie-start-up-envato/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-envato-service-design-hover.gif'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="walter-and-eliza-institute-responsive-design-aa-accessibility-standards">
-
-				<div class="caption">
-					<h3>Walter and Eliza Institute – 100 Years of Discoveries for Humanity</h3>
-					<p>Beautiful responsive design and adhering to AA accessibility standards</p>					<a class="add-hash" href="/projects/walter-and-eliza-institute-responsive-design-aa-accessibility-standards/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/wehi-thumb-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="berlei-the-ultimate-increase-in-ecommerce-conversion-optimisation">
-
-				<div class="caption">
-					<h3>Berlei, The Ultimate Online Store</h3>
-					<p>Berlei design, user experience and checkout overhaul</p>					<a class="add-hash" href="/projects/berlei-the-ultimate-increase-in-ecommerce-conversion-optimisation/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-berlei-bra.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="payments-with-visa-paywave-australia-wide">
-
-				<div class="caption">
-					<h3>Payments with Visa Paywave Australia wide</h3>
-					<p>A new mobile service platform. Created from the ground up that enables delivery of payments and related mobile banking services to mobile devices on behalf of clients.</p>					<a class="add-hash" href="/projects/payments-with-visa-paywave-australia-wide/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/cuscal-app-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="latrobe-community-health-service-responsive-website-design">
-
-				<div class="caption">
-					<h3>LCHS Mobile Friendly Website</h3>
-					<p>Reinventing Digital Health Services</p>					<a class="add-hash" href="/projects/latrobe-community-health-service-responsive-website-design/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-lchs-digital-health-hover.gif'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="art-series-hotel-group-user-experience-design-and-development">
-
-				<div class="caption">
-					<h3>Art Series Hotel Group User Experience Design and Development</h3>
-					<p>Art Series Hotel Group UX Development</p>					<a class="add-hash" href="/projects/art-series-hotel-group-user-experience-design-and-development/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/art-series-hotel-ux-development-thumb.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="bonds-digital-customer-experience">
-
-				<div class="caption">
-					<h3>Bonds Digital Customer Experience</h3>
-					<p>Customer experience and e-commerce with mobile in mind.</p>					<a class="add-hash" href="/projects/bonds-digital-customer-experience/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-bond-cx-online.gif'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="summersalt-festival-melbourne">
-
-				<div class="caption">
-					<h3>Summersalt Festival Melbourne</h3>
-										<a class="add-hash" href="/projects/summersalt-festival-melbourne/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-summersalt-festival-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="ngv-melbourne-now-responsive-website-android-and-ios-apps">
-
-				<div class="caption">
-					<h3>NGV Melbourne Now Responsive website, Android and iOS apps</h3>
-					<p>NGV Melbourne Now Website, Android and iOS app</p>					<a class="add-hash" href="/projects/ngv-melbourne-now-responsive-website-android-and-ios-apps/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/ngv-melbourne-now-app-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="broadsheet-mobile">
-
-				<div class="caption">
-					<h3>Broadsheet Mobile</h3>
-					<p>Broadsheet mobile has all the things you know and love!</p>					<a class="add-hash" href="/projects/broadsheet-mobile/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/broadsheet-app-thumb.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="responsive-website-design-of-the-royal-womens-hospital-melbourne">
-
-				<div class="caption">
-					<h3>Responsive website design of the Royal Women&#8217;s Hospital Melbourne</h3>
-					<p>The Royal Women's Hospital Website, Responsive Design</p>					<a class="add-hash" href="/projects/responsive-website-design-of-the-royal-womens-hospital-melbourne/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thewomens-thumbnail-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="top-tradie-cup">
-
-				<div class="caption">
-					<h3>Top Tradie Cup</h3>
-					<p>HTML5 app and marketing responsive microsite.</p>					<a class="add-hash" href="/projects/top-tradie-cup/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/top-tradie-cup-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="world-vision">
-
-				<div class="caption">
-					<h3>World Vision responsive campaign website</h3>
-					<p>2013 Federal Election campaign microsite</p>					<a class="add-hash" href="/projects/world-vision/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/world-vision-thumb-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="creative-spaces-responsive-website-application">
-
-				<div class="caption">
-					<h3>Creative Spaces Responsive Website Application</h3>
-					<p>Creative Spaces responsive user experience web application, design and development.</p>					<a class="add-hash" href="/projects/creative-spaces-responsive-website-application/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-landscape-creative-spaces-hover.png'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="the-loop-ux-design">
-
-				<div class="caption">
-					<h3>The Loop</h3>
-					<p>Connecting creatives with companies, collaborators and job opportunities.</p>					<a class="add-hash" href="/projects/the-loop-ux-design/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/the-loop-community-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="football-federation-australia-you-power-the-game">
-
-				<div class="caption">
-					<h3>You Power The Game</h3>
-					<p>Responsive Facebook application for Football Federation Australia's 2013 A-League 'You Power The Game' campaign.</p>					<a class="add-hash" href="/projects/football-federation-australia-you-power-the-game/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/football-federation-australia-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="greening-australia-digital-presence-and-responsive-website">
-
-				<div class="caption">
-					<h3>Greening Australia&#8217;s Digital Presence</h3>
-					<p>Change by numbers and making a difference</p>					<a class="add-hash" href="/projects/greening-australia-digital-presence-and-responsive-website/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-greening-australia-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="birdlife-australia">
-
-				<div class="caption">
-					<h3>Birdlife Australia</h3>
-					<p>The voice for Australian birds <br />
-since 1901</p>					<a class="add-hash" href="/projects/birdlife-australia/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/birdlife-aus-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="u1-group">
-
-				<div class="caption">
-					<h3>U1 Group</h3>
-					<p>Usability experts making digital experiences more enjoyable</p>					<a class="add-hash" href="/projects/u1-group/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/u1group-thumb.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="profilr-responsive-website-application">
-
-				<div class="caption">
-					<h3>Profilr Responsive Website Application</h3>
-					<p>Profilr responsive website app allows candidates to stop job searching and be contacted directly by employers, and for employers to avoid costly fees</p>					<a class="add-hash" href="/projects/profilr-responsive-website-application/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/thumb-portrait-Profilr-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="reform-clothing">
-
-				<div class="caption">
-					<h3>Reform Clothing</h3>
-					<p>Design your own varsity jackets, hoodies & jumpers</p>					<a class="add-hash" href="/projects/reform-clothing/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/reform-clothing-hover.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="one-laptop-per-child-digital-ux-web-application-design-and-development">
-
-				<div class="caption">
-					<h3>One Laptop Per Child Digital UX Web Application Design and Development</h3>
-										<a class="add-hash" href="/projects/one-laptop-per-child-digital-ux-web-application-design-and-development/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/olpc-ux-application-thumb.jpg'/>
-
-			</li>
-			
-			
-			
-			<li class="slide project" data-id="the-fifth-army-headspace-cotton-on-foundation">
-
-				<div class="caption">
-					<h3>The Fifth Army</h3>
-					<p>Ruby Rose leads the Fifth Army, raising awareness of depression, bullying and homophobia directly with those effected. An elegant, easy to use mobile application (iOS & Android).</p>					<a class="add-hash" href="/projects/the-fifth-army-headspace-cotton-on-foundation/" >Lauch Site</a>
-				</div>
-				<img src='http://carterdigital.com.au/images/uploads/headspace-cotton-on-hover.jpg'/>
-
-			</li>
-			
-			
-
-		</ul>
+	<div id="tab-4" class="tab-content">
+		<div id="innerTabDuration" class="innerTab" onClick="TabTransition();">
+	<nav>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>21 days<br/></span> </a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>28 days<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>35 days<br/></span></a>
+      <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>42 days</br></span></a>
+       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>56 days</br></span></a>
+</nav>
+	</div>
+	<br/>
+	<br/>
+	<button id="button" class="nextButton">Register!</button>
 	</div>
 
-	<div class='sliderControls'>
-		<ul>
-
-		</ul>
-	</div>
-
-</div>-->
+</div><!-- container -->
 
 
 
-<div class="tab-panels">
+
+
+
+<!--<input id="pac-input" class="controls" type="text" placeholder="Start typing here">-->
+
+
+
+
+<!---<div class="tab-panels">
 	<ul class="tabs">
-		<li rel="panel1"> Address</li>
-		<li rel="panel2">House Type</li>
-		<li rel="panel3">Sale Type</li>
-		<li rel="panel4">Sale Duration</li>
+		<li rel="panel1" data-tab="tab-1"> Address</li>
+		<li rel="panel2" data-tab="tab-2">House Type</li>
+		<li rel="panel3"  data-tab="tab-3">Sale Type</li>
+		<li rel="panel4" data-tab="tab-4">Sale Duration</li>
 	</ul>
 
 	<div id="panel1" class="panel active">
-	32 Vermont Place, Stonefields<br/>
-	35 Vermont Stree, Remuera<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
+	
 	</div>
 
 	<div id="panel2" class="panel">
-	Apartment<br/>
-	Townhouse<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
+
 	</div>
 
 	<div id="panel3" class="panel">
-	Auction<br/>
-	Tender<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
+
 	</div>
 
 	<div id="panel4" class="panel">
-	21 days<br/>
-	28 days<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
-	content1<br/>
+
 	</div>
 
 </div>
+-->
 
 
-
-
-
-<div id = "form">
-  <form action="action_page.php">
-    
-    <!-- The Address Label and text box-->
-    <label for="address">Address</label>
-    <input type="text" id="address" style="padding:5px;" name="firstname" value ="Enter Your Property Address to Begin" onfocus="this.value='';" />
-
-    <!--<label for="Suburb">Suburb</label>
-    <select id="suburb" name="suburb">
-      <option value="Remuera">Remuera</option>
-      <option value="Ponsonby">Ponsonby</option>
-      <option value="Mission Bay">Mission Bay</option>
-      <option value="Mission Bay">Herne Bay</option>
-      <option value="Mission Bay">Auckland Central</option>
-    </select>-->
-  
-
-  <!-- The Type label and select options-->
-  <label for="type" id="type" style="float:left;width:36.3%;display:inline-block;">Type</label>
-
-  <select id="typeSelect" name="Type" >
-     <option label="" selected></option>
-      <option label="Apartment" name="gggg" value="Apartment" type="text" display="none" >Apartment</option>
-      <option label="House" value="House">House</option>
-      <option   label="Townhouse" value="Townhouse">Townhouse</option>
-  </select>
-  
- <!-- The Sale label and options-->
-
- <div id ="sally">
-  <label id="saleLabel" for="sale">Sale</label>
-   <!-- The Sale options-->
-  <select id="sale" name "sale">
-      <option id="Asking Price" label="Asking Price" name="Asking Price" value="Asking Price">Asking Price:</option>
-      <option id="enquiresOver" label="House" value="House">Enquiries Over:</option>
-      <option id="auctionDate" label="Townhouse" value="Townhouse">Auction Date:</option>
-  </select>
-  </div>
-
-   <!-- The Duration label so as to display in-line-->
-  <label for="duration" style="float:right;width:30.3%;display:none;" display="none">Duration</label> 
-
-   <!-- The Duration label and options-->
-   <select id="duration" name "duration" style="display:none;">
-      <option id="twentyOne" label="twentyOne" name="twentyOne" value="twentyOne" type="text" display="none" onfocus="this.value=value">21 days</option>
-      <option id="twentyEight" label="twentyEight" value="twentyEight">28 days</option>
-      <option id="fortyTwo" label="fortyTwo" value="fortyTwo">42 days</option>
-  </select>
-
-   <!-- The Submit button-->
-    <input type="submit" value="Submit">
-  </form>
-</div>
 
 	
 
+
+
+<script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+       // autocomplete.addListener('place_changed', fillInAddress);
+
+      }
+
+
+		
+			
+		     
+
+      
+      
+   
+		
+	
+            //Do Stuff, submit, etc..
+         
+  
+
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+
+
+	
+
+    </script>
 
 
 
@@ -825,9 +664,12 @@ Our creative design and responsive development solutions are second to none.</h2
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-1.7.min.js"><\/script>')</script>
+
+<script>window.jQuery || document.write('<script src="query.js"><\/script>')</script>
+
 
 <script src="js/compiled.js"></script>
+
 
 <script>(function() {
   var _fbq = window._fbq || (window._fbq = []);
@@ -846,7 +688,10 @@ window._fbq.push(['track', '6014210340266', {'value':'0.01','currency':'AUD'}]);
 
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6014210340266&amp;cd[value]=0.01&amp;cd[currency]=AUD&amp;noscript=1" /></noscript>
 
+
+  <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyB6oY5RppIQWSmSKgw4sOA21p7S7j9AP-I &libraries=places&callback=initAutocomplete"
+        async defer></script>
 </body>
 
-<!-- Mirrored from carterdigital.com.au/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jun 2016 02:39:05 GMT -->
+
 </html>

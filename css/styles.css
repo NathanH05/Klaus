@@ -287,17 +287,9 @@ form .field.error label.error{display:none !important}
     padding: 20px;
     width: 70%;
     margin:auto;
-}
-.nextButton{
-	font-size: 25px;
 
 
-}
 
-.innerTab{
-	font-size: 30px;
-	color: black;
-	line-height: 2em;
 }
 
 #saleLabel{
@@ -319,25 +311,3 @@ form .field.error label.error{display:none !important}
 
 }
 
-#lean_overlay {
-    position: fixed;
-    z-index:100;
-    top: 0px;
-    left: 0px;
-    height:100%;
-    width:100%;
-    background: #000;
-    display: none;
-}
-
-#popupBoxOnePosition{
-				top: 100; left: 0; position: fixed; width: 100%; height: 120%;
-				background-color: rgba(0,0,0,0.7); display: none;
-			}
-		
-			.popupBoxWrapper{
-				width: 550px; margin: 50px auto; text-align: left;
-			}
-			.popupBoxContent{
-				background-color: #FFF; padding: 15px;
-			}

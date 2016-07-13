@@ -37,14 +37,15 @@
 		$(nob[i]).addClass('current');
 		$("#"+nobcontent).addClass('current');
 		//	console.log(tab_id);
-		if (i==4) {
+		if (i==3) {
 		
 		
         var my_text = prompt('Thanks for registering your interest with Klaus. We are still in BETA mode but will get in touch soon! Please enter your email here');
         console.log(my_text);console.log("hi");
         alert('Thankyou someone from Klaus will get in touch soon');
   i=0;
-  console.log(i);
+  //console.log(i);var mess;
+ // $("[class^=autocomplete]").value = null;console.log(mess);
   $(nob[i]).addClass('current');
   var tab_id = nob[i];
   var nobcontent = $(tab_id).attr("data-tab");
@@ -57,6 +58,7 @@
 
 })
 var i = 1;
+
 function TabTransition(){
 	
 		i++;
@@ -73,8 +75,8 @@ function TabTransition(){
 		
 		
 	//	console.log(nob[0]);
-		
-		
+		var nut=document.getElementById("autocomplete").innerhtml='';
+		document.getElementById("autocomplete").innerhtml='';
 		
 
 		$('ul.tabs li').removeClass('current');
@@ -89,13 +91,23 @@ function TabTransition(){
         var my_text = prompt('Thanks for registering your interest with Klaus. We are still in BETA mode but will get in touch soon! Please enter your email here');
         console.log(my_text);console.log("hi");
         alert('Thankyou someone from Klaus will get in touch soon');
+//$("[class^=autocomplete]".'property value')='';
+
+var mess = $("[class^=autocomplete]");
+$("[class^=autocomplete]").blur();    
+setTimeout(function(){
+ $("[class^=autocomplete]").val('')
+ $("[class^=autocomplete]").focus();},10)
+
+console.log(mess);
+
   i=0;
   console.log(i);
   $(nob[i]).addClass('current');
   var tab_id = nob[i];
   var nobcontent = $(tab_id).attr("data-tab");
 		$("#"+nobcontent).addClass('current');console.log(nobcontent);
-		
+
 	};
 	}
 	
@@ -354,9 +366,9 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 		
 	
 	<nav>
-      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>House<br/></span> </a>
-      <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>Townhouse<br/></span></a>
-      <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>Unit<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i><span>House<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-up"></i><span>Townhouse<br/></span></a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-left"></i></i> <span>Unit<br/></span></a>
       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Section</br></span></a>
        <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Lifestyle Dwelling</br></span></a>
 </nav>
@@ -368,14 +380,14 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 		<div id="innerTabSleType" class="innerTab" onClick="TabTransition();">
 	
 	<nav>
-      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>Auction<br/></span> </a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>Auction<br/></span></a>
       <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>Tender<br/></span></a>
       <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>Price By Negotiation<br/></span></a>
       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Enquiries Over</br></span></a>
        <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Tender Closing</br></span></a>
        <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>Deadline Sale</br></span></a>
 </nav>
-</br>
+
 </div>
 
 	</div>
@@ -383,7 +395,7 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 	<div id="tab-4" class="tab-content">
 		<div id="innerTabDuration" class="innerTab" onClick="TabTransition();">
 	<nav>
-      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>21 days<br/></span> </a>
+      <a class="box demo-1"> <i class="fa fa-hand-o-right"></i> <span>21 days<br/></span></a>
       <a class="box demo-1"> <i class="fa fa-hand-o-up"></i> <span>28 days<br/></span></a>
       <a class="box demo-1"> <i class="fa fa-hand-o-left"></i>  </i> <span>35 days<br/></span></a>
       <a class="box demo-1">  <i class="fa fa-thumbs-o-up"></i> <span>42 days</br></span></a>
@@ -392,7 +404,7 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 	</div>
 	<br/>
 	<br/>
-	<button id="button" class="nextButton">Register!</button>
+	<button id="button" class="registerButton"><a href="dash.html"> Register!</a></button>
 	</div>
 
 </div><!-- container -->
@@ -524,7 +536,7 @@ Why pay the Real Estate Agent? Do it yourself.</h1>
 	
 	<div class="section_heading">
 		<div class="inner">
-			<h2>We produce the highest possible user experience for your business and target audience.<br />
+			<h2 style="font-family:sans-serif;">We produce the highest possible user experience for your business and target audience.<br />
 Our creative design and responsive development solutions are second to none.</h2>
 		</div>
 	</div>
@@ -538,7 +550,7 @@ Our creative design and responsive development solutions are second to none.</h2
 		<div class="circle">
 			<div class="inner">
 				<div class="icon discover"></div>
-				<h2>Discover</h2>
+				<h2>Select your home hostess</h2>
 				<p>- Your Vision -</p>
 			</div>
 		</div>
@@ -562,7 +574,7 @@ Our creative design and responsive development solutions are second to none.</h2
 		<div class="circle">
 			<div class="inner">
 				<div class="icon design"></div>
-				<h2>Design</h2>
+				<h2>Choose a Lawyer</h2>
 				<p>- It's Alive -</p>
 			</div>
 		</div>
@@ -586,7 +598,7 @@ Our creative design and responsive development solutions are second to none.</h2
 		<div class="circle">
 			<div class="inner">
 				<div class="icon deliver"></div>
-				<h2>Deliver</h2>
+				<h2>Sell</h2>
 				<p>- Lift Off -</p>
 			</div>
 		</div>
